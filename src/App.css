@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #303a44;
+  color: #ffffff;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.TodoList{
+  background: #c0e6f3;
+  max-width: 90%;
+  margin: 5% auto;
+  position: relative;
+}
+
+.TodoList_emptyTitle{
+  color:rgb(46, 144, 230);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.TodoListHeader{
+  padding: 5%;
+  background: rgb(0,211,198);
+  background: -moz-linear-gradient(top, rgb(0,211,198) 0%, rgb(0,183,198) 41%, rgb(25,176,197) 50%, rgb(41,168,198) 61%, rgb(60,156,197) 80%, rgb(76,142,198) 100%);
+  background: -webkit-linear-gradient(top, rgb(0,211,198) 0%,rgb(0,183,198) 41%,rgb(25,176,197) 50%,rgb(41,168,198) 61%,rgb(60,156,197) 80%,rgb(76,142,198) 100%);
+  background: linear-gradient(to bottom, rgb(0,211,198) 0%,rgb(0,183,198) 41%,rgb(25,176,197) 50%,rgb(41,168,198) 61%,rgb(60,156,197) 80%,rgb(76,142,198) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d3c6', endColorstr='#4c8ec6',GradientType=0 );
+}
+
+
+
+.TodoListFooter{
+  padding: 5%;
+}
+
+

@@ -1,0 +1,53 @@
+.Form input{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    padding:  10px 20px;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(19, 129, 224, 0.63);
+    outline: 0;
+    color:rgb(46, 144, 230);
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+  }
+  
+  
+  .Form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(46, 144, 230, 0.664);
+  }
+  .Form input::-moz-placeholder { /* Firefox 19+ */
+    color: #ffffffab;
+  }
+  .Form input:-ms-input-placeholder { /* IE 10+ */
+    color: #ffffffab;
+  }
+  .Form input:-moz-placeholder { /* Firefox 18- */
+    color: #ffffffab;
+  }
+  
+  
+  .Form_btn{
+    position: absolute;
+    left: 50%;
+    bottom: -33px;
+    margin-left:-2rem ;
+    border: 0;
+    outline: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius:50%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: 0.5s ease;
+    background: rgb(0,211,198);
+    background: -moz-linear-gradient(top, rgb(0,211,198) 0%, rgb(0,183,198) 41%, rgb(25,176,197) 50%, rgb(41,168,198) 61%, rgb(60,156,197) 80%, rgb(76,142,198) 100%);
+    background: -webkit-linear-gradient(top, rgb(0,211,198) 0%,rgb(0,183,198) 41%,rgb(25,176,197) 50%,rgb(41,168,198) 61%,rgb(60,156,197) 80%,rgb(76,142,198) 100%);
+    background: linear-gradient(to bottom, rgb(0,211,198) 0%,rgb(0,183,198) 41%,rgb(25,176,197) 50%,rgb(41,168,198) 61%,rgb(60,156,197) 80%,rgb(76,142,198) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d3c6', endColorstr='#4c8ec6',GradientType=0 );
+  }
+
+
+  .Form_btn:hover{
+    transform: scale(1.1);
+  }
