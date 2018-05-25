@@ -12,41 +12,49 @@ class App extends Component {
     userSearch:''
   }
 
+
+
+
   userSearchValHandler=(e)=>{
-    this.setState({
-      userSearch:e.target.value
-    })
-    console.log(this.state.userSearch);
+    if(this.state.items.length){
+      this.setState({
+        userSearch:e.target.value
+      })
+    }
+    else{
+      alert('Nothing to search')
+    }
   }
 
   deleteSearchInputHandler= () =>{
-    console.log("delete");
+    this.setState({
+      userSearch:''
+    })
   }
 
 
   addEventHandler=(e,input)=>{
     e.preventDefault();
     let itemsStorage = JSON.parse(localStorage.getItem("items")) || [];
-    itemsStorage.push(input);
-    localStorage.setItem("items", JSON.stringify(itemsStorage));
-    let newItems = [...this.state.items];
-    if(input){
+    if(input === '' || input === null){
+      alert("Please enter some text!");
+    }else{
+      itemsStorage.push(input)
+      localStorage.setItem("items", JSON.stringify(itemsStorage));
+      let newItems = [...this.state.items];
       newItems.push(input);
       this.setState({
         items:newItems,
         userInput:''
       })
     }
-    else{
-      alert("Please enter some text!");
-    }
+
   }
 
 
   getInputValHandler=(e)=>{
-    let eventItem = e.target.value;
     this.setState({
-      userInput:eventItem
+      userInput:e.target.value
     })
   }
 
@@ -79,7 +87,10 @@ class App extends Component {
 
   render() {
 
-    let itemsList = this.state.items.map((item,index)=>{
+    let itemsList = this.state.items.filter(item=>{
+      return item.toLowerCase().includes(this.state.userSearch.toLowerCase())
+    })
+      .map((item,index)=>{
       return <TodoItem item={item}
                        key={index}
                        deleteItem={()=>this.deleteEventItemHandler(index)}/>
@@ -97,6 +108,7 @@ class App extends Component {
             <header className="TodoListHeader">
               <Search
               userSearchVal={this.userSearchValHandler}
+              userSearch={this.state.userSearch}
               deleteSearchInput={this.deleteSearchInputHandler} />
               <Datebar />
             </header>

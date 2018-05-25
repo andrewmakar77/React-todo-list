@@ -14,7 +14,7 @@ const DateBar = ()=>{
                     <p className="Datebar_year">{date.getFullYear()}</p>
                 </div>
             </div>
-            <p className="Datebar_day"> {days[date.getDay()]}</p>
+            <p className="Datebar_day">{days[date.getDay()- 1]}</p>
         </div>
     )
 }
