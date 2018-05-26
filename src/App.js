@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import TodoForm from './Components/TodoForm/TodoForm';
-import TodoItem from './Components/TodoItem/TodoItem'
+import React, { Component } from 'react'
+import TodoForm from './Components/TodoForm/TodoForm'
+import TodoItems from './Components/TodoItems/TodoItems'
 import Search from './Components/Search/Search'
 import Datebar from './Components/DateBar/DateBar'
 
 class App extends Component {
 
-  state={
+  state = {
     items :[],
     userInput:'',
     userSearch:''
@@ -87,22 +87,6 @@ class App extends Component {
 
   render() {
 
-    let itemsList = this.state.items.filter(item=>{
-      return item.toLowerCase().includes(this.state.userSearch.toLowerCase())
-    })
-      .map((item,index)=>{
-      return <TodoItem item={item}
-                       key={index}
-                       deleteItem={()=>this.deleteEventItemHandler(index)}/>
-  });
-
-    let showEventsItem = (<h2 className="TodoList_emptyTitle">
-                            Add some events to list!
-                          </h2>)
-    if(this.state.items.length){
-      showEventsItem = itemsList
-    }
-
     return (
         <div className="TodoList">
             <header className="TodoListHeader">
@@ -113,9 +97,9 @@ class App extends Component {
               <Datebar />
             </header>
             <main className="TodoListMain">
-              <ul>
-                  {showEventsItem}
-              </ul>
+              <TodoItems  items={this.state.items}
+                          userSearch={this.state.userSearch}
+                          deleteItem={this.deleteEventItemHandler} />
             </main>
             <footer className="TodoListFooter">
             <TodoForm addEvent={(e)=>this.addEventHandler(e,this.state.userInput)}
