@@ -11,12 +11,12 @@ const TodoItems = ({items,userSearch,deleteItem}) =>{
                          deleteItem={()=>deleteItem(index)}/>
     });
   
-      let showEventsItem = (<h2 className="TodoList_emptyTitle">
+      let noEvents = (<h2 className="TodoList_emptyTitle">
                               Add some events to list!
                             </h2>)
 
       if(!items.length){
-        itemsList = showEventsItem
+        itemsList = noEvents
       }
 
       return(
